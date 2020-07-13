@@ -1,0 +1,41 @@
+.MainSearch {
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: space-between;
+
+    &__country {
+        input {
+            background-color: hsl(209, 23%, 22%);
+            border: none;
+            outline: none;
+            height: 3.2em;
+            width: 30em;
+            box-shadow: 0 0 20px -10px black;
+            padding: 0 1em;
+            color: #FFF;
+
+            &::placeholder {
+                color: #FFF;
+            }
+        }
+
+    }
+
+    select {
+        background-color: hsl(209, 23%, 22%);
+        border: none;
+        outline: none;
+        height: 3.2em;
+        width: 15em;
+        box-shadow: 0 0 20px -10px black;
+        padding: 0 1em;
+        color: #FFF;
+    }
+
+    option {
+        font-family: 'Nunito Sans';
+        line-height: 2em;
+        height: 2em;
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,31 @@
+@import 'Vars.scss';
+
+body {
+   font-family: 'Nunito sans';
+   background-color: hsl(207, 26%, 17%);
+
+}
+
+a, {
+   color: inherit;
+}
+
+h1,h2,h3{
+   color: #fff;
+}
+
+button {
+   background-color: hsl(209, 23%, 22%);
+   border: none;
+   outline: none;
+   height: 3.2em;
+   width: 30em;
+   box-shadow: 0 0 20px -10px black;
+   padding: 0 1em;
+   color: #FFF;
+
+   &:hover {
+      cursor: pointer;
+
+   }
+}
