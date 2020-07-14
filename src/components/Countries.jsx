@@ -1,14 +1,21 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { Link } from "react-router-dom";
+//redux
+import {useSelector, useDispatch} from 'react-redux'
+import {searchFlagsAction} from '../redux/FlagsDucks'
 //components
 import Country from "./Country";
-//hooks
-import useinitialState from "../hooks/useData";
+
 //style
 import "../assets/styles/components/Countries.scss";
 
 const Countries = ({ search, region }) => {
-  let data = useinitialState();
+
+  const dispatch= useDispatch()
+  const flags = useSelector(store => store.flags.array)
+  
+
+  let data = flags;
   data = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );

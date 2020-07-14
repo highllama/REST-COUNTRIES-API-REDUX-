@@ -13,6 +13,7 @@
             box-shadow: 0 0 20px -10px black;
             padding: 0 1em;
             color: #FFF;
+            border-radius: 5px;
 
             &::placeholder {
                 color: #FFF;
@@ -30,6 +31,7 @@
         box-shadow: 0 0 20px -10px black;
         padding: 0 1em;
         color: #FFF;
+        border-radius: 5px;
     }
 
     option {
@@ -38,4 +40,20 @@
         height: 2em;
         font-size: 1.2em;
     }
+}
+
+@media screen and (max-width: 768px) {
+.MainSearch{
+    flex-direction: column;
+
+    &__country{
+
+        input {
+            margin-bottom: 2em;
+            width: 90%;
+        }
+
+    }
+}
+
 }

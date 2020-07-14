@@ -1,7 +1,15 @@
 .Countries {
     margin-top: 3em;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    // grid-template-columns: repeat(autofit, 200px);
     gap: 4em;
+
+}
+
+@media screen and (max-width:768px ) {
+
+    .Countries {
+        grid-template-columns: 1fr;
+    }
 }

@@ -4,17 +4,26 @@ import { BrowserRouter, Route } from "react-router-dom";
 import "../assets/styles/App.scss";
 //components
 import Layout from "../containers/Layout";
-import Home from '../containers/Home'
-import CountryInfo from '../containers/CountryInfo'
+import Home from "../containers/Home";
+import CountryInfo from "../containers/CountryInfo";
+//redux
+import { Provider } from "react-redux";
+import Store from "../redux/store";
+
 
 const App = () => {
+  const store = Store();
+  
+  console.log(store.getState());
   return (
-    <BrowserRouter>
-      <Layout>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/:country' component={CountryInfo} />
-      </Layout>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Layout>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/:country" component={CountryInfo} />
+        </Layout>
+      </BrowserRouter>
+    </Provider>
   );
 };
 

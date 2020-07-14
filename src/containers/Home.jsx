@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import MainSearch from "../components/MainSearch";
 import Countries from "../components/Countries";
 
+
 const Home = () => {
+
   const [search, setSearch] = useState("");
   const [region, setRegion] = useState(null);
 
@@ -13,7 +15,7 @@ const Home = () => {
   const HandleRegionSearch = (e) => {
     setRegion(e.currentTarget.value)
   }
-  console.log(region);
+  // console.log(region);
 
   return (
     <>
