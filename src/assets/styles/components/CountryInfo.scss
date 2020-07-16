@@ -73,6 +73,28 @@
         margin: 0 .2em;
     }
 
+
+    body.darkMode &  {
+        #backButton{
+            background-color: #FFF;
+            color: #000;
+        }
+        #borderButton{
+            background-color: #FFF;
+            color: #000;
+        }
+
+        h3{
+            color: #000;
+        }
+
+        &__datails_secondary h3,strong,h1 {
+            color: #000;
+        }
+
+    }
+
+
 }
 
 

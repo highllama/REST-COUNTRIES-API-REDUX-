@@ -1,21 +1,21 @@
 import React from "react";
 //redux
-import { useSelector, useDispatch } from "react-redux";
-//hooks
-import useData from "../hooks/useData";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 //styles
 import "../assets/styles/components/CountryInfo.scss";
+//iso2
+// import ISO2Codes from "../constants/ISO2codes";
 
 const CountryInfo = (props) => {
-  
   const data = useSelector((store) => store.flags.array);
-  const init = data.filter(
-    (item) => { return item.name == props.match.params.country
-     } );
-    const country = init[0]
-  
- 
+  const init = data.filter((item) => {
+    return item.name === props.match.params.country;
+  });
+  const country = init[0];
+  // const iso2Codes = Object.entries(ISO2Codes)
+  const INTL = new Intl.NumberFormat("es-CO");
+
   return country == null ? (
     "Loading"
   ) : (
@@ -39,7 +39,7 @@ const CountryInfo = (props) => {
               </h3>
               <h3>
                 <strong>Population: </strong>
-                {country.population}
+                {INTL.format(country.population)}
               </h3>
               <h3>
                 <strong>Region: </strong>
@@ -67,19 +67,22 @@ const CountryInfo = (props) => {
               </h3>
               <h3>
                 <strong>Languages: </strong>
-                {country.languages.map((item) => item.name + ', ')}
+                {country.languages.map((item) => item.name + ", ")}
               </h3>
             </div>
             <div className="CountryInfo__borders">
               <h3>Border Countries: </h3>
 
-              {country.borders.map((item) => (
-                <div key={item}>
-                  <button key={item} id="borderButton">
-                    {item}
-                  </button>
-                </div>
-              ))}
+              {country.borders.map((item) => {
+                return (
+                  <div key={item}>
+                    <button key={item} id="borderButton">
+                      {/* {iso2Codes[`${item.slice(0,2)}`]} */}
+                      {item}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

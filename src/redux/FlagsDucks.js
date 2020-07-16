@@ -18,8 +18,8 @@ export default function flagsReducer(state = initialData, action) {
       };
     case SEARCH_FLAGS:
       return {
-          ...state,
-          array: action.payload
+        ...state,
+        array: action.payload,
       };
     default:
       return state;
@@ -28,16 +28,16 @@ export default function flagsReducer(state = initialData, action) {
 
 //ACTIONS
 
-export const getFlagsAction = () =>  (dispatch, getState) => {
-
-    fetch('https://restcountries.eu/rest/v2')
-    .then(res => res.json())
-    .then(data => dispatch({
+export const getFlagsAction = () => (dispatch, getState) => {
+  fetch("https://restcountries.eu/rest/v2")
+    .then((res) => res.json())
+    .then((data) =>
+      dispatch({
         type: GET_FLAGS_SUCCES,
-        payload: data
-    }))
-    .catch( err => console.log(err))
-  
+        payload: data,
+      })
+    )
+    .catch((err) => console.log(err));
 };
 
 export const searchFlagsAction = (search) => (dispatch, getState) => {
@@ -45,7 +45,9 @@ export const searchFlagsAction = (search) => (dispatch, getState) => {
   console.log(flags.array);
   console.log(search);
 
-  const filter = flags.array.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()));
+  const filter = flags.array.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
   console.log(filter);
   dispatch({
     type: SEARCH_FLAGS,

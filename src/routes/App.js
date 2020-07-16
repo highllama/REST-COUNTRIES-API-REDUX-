@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 //styles
+import normalize from 'normalize.css'
 import "../assets/styles/App.scss";
+
 //components
 import Layout from "../containers/Layout";
 import Home from "../containers/Home";
@@ -10,11 +12,10 @@ import CountryInfo from "../containers/CountryInfo";
 import { Provider } from "react-redux";
 import Store from "../redux/store";
 
-
 const App = () => {
   const store = Store();
+
   
-  console.log(store.getState());
   return (
     <Provider store={store}>
       <BrowserRouter>

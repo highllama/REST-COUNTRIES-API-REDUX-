@@ -7,4 +7,29 @@ header {
     align-items: center;
     justify-content: space-between;
     font-weight: 300;
+    transition: .5s ease-in-out all;
+
+    body.darkMode & {
+        background-color: #Fff;
+
+        a,i,span {
+            color: #000;
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span:hover {
+            cursor: pointer;
+        }
+    }
+
+    .fas,.far{
+        margin-right: .5em;
+    }
+
+    
 }

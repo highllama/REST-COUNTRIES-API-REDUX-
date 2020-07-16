@@ -1,16 +1,18 @@
-import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
-import thunk from 'redux-thunk'
+import { createStore, combineReducers, compose, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
-import flagsReducer from './FlagsDucks'
+import flagsReducer from "./FlagsDucks";
 
 const rootReducer = combineReducers({
-    flags: flagsReducer
-})
+	flags: flagsReducer,
+});
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-
 export default function Store() {
-    const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
-    return store
+	const store = createStore(
+		rootReducer,
+		composeEnhancers(applyMiddleware(thunk))
+	);
+	return store;
 }

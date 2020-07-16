@@ -14,6 +14,7 @@
             padding: 0 1em;
             color: #FFF;
             border-radius: 5px;
+            transition: .5s ease-in-out all;
 
             &::placeholder {
                 color: #FFF;
@@ -32,6 +33,7 @@
         padding: 0 1em;
         color: #FFF;
         border-radius: 5px;
+        transition: .5s ease-in-out all;
     }
 
     option {
@@ -40,20 +42,38 @@
         height: 2em;
         font-size: 1.2em;
     }
-}
 
-@media screen and (max-width: 768px) {
-.MainSearch{
-    flex-direction: column;
+    /* ------------DARKMODE-------------*/
 
-    &__country{
+    body.darkMode & {
 
-        input {
-            margin-bottom: 2em;
-            width: 90%;
+        input,select {
+            background-color: #fff;
+            color: #000;
+
+            &::placeholder {
+                color: #000;
+            }
         }
+
+      
+
 
     }
 }
+
+@media screen and (max-width: 768px) {
+    .MainSearch {
+        flex-direction: column;
+
+        &__country {
+
+            input {
+                margin-bottom: 2em;
+                width: 90%;
+            }
+
+        }
+    }
 
 }

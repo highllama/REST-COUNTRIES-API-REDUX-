@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 //components
 import MainSearch from "../components/MainSearch";
 import Countries from "../components/Countries";
@@ -21,6 +21,7 @@ const Home = () => {
     <>
       <MainSearch HandleSearch={HandleSearch} HandleRegionSearch={HandleRegionSearch} />
       <Countries search={search} region={region} />
+      
     </>
   );
 };

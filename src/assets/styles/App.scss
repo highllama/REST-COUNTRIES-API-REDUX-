@@ -3,7 +3,10 @@
 body {
    font-family: 'Nunito sans';
    background-color: hsl(207, 26%, 17%);
-
+   transition: .5s ease-in-out all;
+&.darkMode {
+   background-color: #fff;
+}
 }
 
 a, {
